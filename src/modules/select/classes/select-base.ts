@@ -347,15 +347,16 @@ export abstract class SuiSelectBase<T, U> implements AfterContentInit, OnDestroy
 
     @HostListener("click", ["$event"])
     public onClick(e:HandledEvent):void {
-        if (!e.eventHandled && !this.dropdownService.isAnimating) {
-            e.eventHandled = true;
+        // if (!e.eventHandled && !this.dropdownService.isAnimating) {
+        //     e.eventHandled = true;
 
-            // If the dropdown is searchable, clicking should keep it open, otherwise we toggle the open state.
-            this.dropdownService.setOpenState(this.isSearchable ? true : !this.dropdownService.isOpen);
+        //     // If the dropdown is searchable, clicking should keep it open, otherwise we toggle the open state.
+        //     this.dropdownService.setOpenState(this.isSearchable ? true : !this.dropdownService.isOpen);
 
-            // Immediately focus the search input whenever clicking on the select.
-            this.focus();
-        }
+        //     // Immediately focus the search input whenever clicking on the select.
+        //     this.focus();
+        // }
+        this.dropdownService.setOpenState(true);
     }
 
     @HostListener("focusin")
